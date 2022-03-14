@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function Response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+
+        function openForm() {
+            document.getElementById("Confirmation_Form").style.display = "block";
+        }
+
+
+    </script>
+    <title>Claims Home</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="body" style="font-family: Calibri Light;margin-top:0;">
+    <div class="panel" style="background-color: #1D1D2C;margin-top:-40px">
+        <br />
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+        <br />
+    </div>
+    <div align="left" style="margin-left:5%">
+
+        <p style="  font-size: 14px;margin-left:70px">
+            <img src="~/Icons/logo.png" width="180" height="135" />
+            <span style="margin-left:35%;font-size:18px"><img src="~/Icons/phonemain.png" height="25" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="23" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+
+
+    <span> @ViewBag.Username </span>
+    <hr />
+
+    <div class="row" style="margin-left:1%;width:98%">
+
+        <div class="column1" align="left" style="background-color: #1D1D2C;width:20%;font-size:18px">
+            <h2 align="center" style="color:#F9F9F9"><b>Dashboard</b></h2>
+            <hr />
+            <div style="margin-left:5%">
+
+                <button onclick="location.href='@Url.Action("ClientProfile", "Policy")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/MyProfile.png" height="60"> &nbsp; <b>My Profile </b> </span></button>
+                <br /> <br />
+                <button onclick="location.href='@Url.Action("Calender", "Policy")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/CALENDAR.gif" height="40"> &nbsp; &nbsp;<b>Calender </b>  </span></button><br />
+                <br /><br />
+                <button onclick="location.href='@Url.Action("Client_Msg_Send", "Policy")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/message.gif" height="40">&nbsp; &nbsp; <b>Messages </b> </span></button>
+                <br /><br />  <br />
+                <button onclick="location.href='@Url.Action("ClaimsHome", "Policy")'" style="background-color:Transparent;border-color:Transparent;  width:100%" align=" right" class="active"><span style="color:#F9F9F9; font-size:25px"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/Claim.png" height="40">&nbsp; &nbsp; <b>Claims </b> </span></button>
+                <br /><br />  <br />
+               
+                <button onclick="location.href='@Url.Action("Index", "Home")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/pay.gif" height="40">&nbsp; &nbsp; <b> Payments</b> </span></button>
+                <br /><br /><br />
+                <button onclick="location.href='@Url.Action("Home_Page", "Policy")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/SIGNOUT.gif" height="40">&nbsp; &nbsp; <b> Sign Out</b> </span></button>
+                <br /><br />
+
+            </div>
+
+
+        </div>
+        <div class="column1" align="left" style="width:80%; height:50%;  background-image: url(~/Icons/logo.png)">
+            <br /> <br /><br /><br />  <br /><br />  <br />  <br />
+            <p style="text-align:center; font-size: 28px">
+                Have you lost your loved one? Don't worry we are here for you,<br />
+                Make your claim here and wait for at least 24 hours to hear <br />
+                from us whether your claim was successful or not.
+            </p>
+
+
+            <br /><br /><br /><br /><br />
+                                    <div class="btn" style="margin-left:40%">
+                                        @Html.ActionLink("Make Claim", "MakeClaim", "Policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })  @Html.ActionLink("Check Status", "Enter", "Policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })
+                                    </div>
+        </div>
+    </div>
+
+  
+    <br /><br />
+    <footer align="center" style="background-color:#1D1D2C ;bottom:0px;width:100%;position:relative;color:#F9F9F9;">
+        <br /><br /><br /><br />
+
+
+        <div class="row" align="left" style="margin-left:8%;width:90%">
+
+
+
+            <div class="column">
+                <p align="center" style="background-color:#F9F9F9;width:50%;border-radius:30px">
+
+                    <img src="~/Icons/logo.png" alt="logo " width="100px" height="90px">
+                </p>
+
+                <br />
+                <p align="left" style="color: #C9C6D8;font-size: 16px"><b>Best we can do, love, care, and comfort,<br /> be with us the family of love.</b></p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>QUICK LINKS</b></p>
+                <br />
+                <p align="left">
+                    <ul style=" font-size: 16px;color:#cca63f">
+                        <b>
+
+                            <li align="left">@Html.ActionLink("Hear more about us.", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be in touch with us", "", "", null, new { id = "contact_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View best we can provide", "", "", null, new { id = "about_us", style = "color:#F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View our gallery", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be with us as family", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+                        </b>
+
+                    </ul>
+                </p><br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style="font-size: 20px;font-family: 'Times New Roman';"><b>OUR CONTACTS</b></p>
+                <br />
+                <p align="left" style="color:#F6F4D5;font-size: 16px"><b> <img src="~/Icons/email.gif" alt="freshFood " height="18px"> &nbsp; info@umthembu.com <br /><br /><img src="~/Icons/phone.png" alt="" height="20px" /> &nbsp; (031) 555-9541</p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>SUBSCRIBE</b></p>
+                <br />
+                <p align="left" style="color:#C9C6D8;font-size: 16px">Subscribe to our email list and<br /> stay up-to-date with all our <br />news.</p>
+            </div>
+
+
+
+
+        </div>
+        <p> <span style="color:#cca63f;font-size: 16px"> Rise and Shine Developers</span> &copy; 2020. All rights reserved</p>
+        <br />
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.ParentCoverQoutation
+<html>
+<body>
+    @using (Html.BeginForm())
+    {
+    <div class="form-group" style="margin-left:15%">
+        @Html.LabelFor(model => model.NumMember, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NumMember, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NumMember, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br /><br />
+    <div class="form-group" style="margin-left:15%">
+        @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Type, new List<SelectListItem>
+                    {
+                    new SelectListItem { Text = "Gold", Value = "Gold",},
+                    new SelectListItem { Text = "Silver", Value = "Silver"},
+                    new SelectListItem { Text = "Bronze", Value = "Bronze"},
+
+                    }, "Select Race")
+
+
+            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+    <br />
+    <br /><br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" style="margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" />
+        </div>
+    </div>
+    <br /><br />
+    @Html.DisplayFor(model => model.TotalPrice)
+    }
+</body>
+</html>

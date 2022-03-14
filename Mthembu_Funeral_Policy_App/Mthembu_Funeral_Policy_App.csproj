@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A01E8F3C-7B45-43F8-905B-E77743FECC53}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DPO_Paygate_PayWeb3</RootNamespace>
+    <AssemblyName>DPO-Paygate-PayWeb3</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PayController.cs" />
+    <Compile Include="Controllers\PolicyController.cs" />
+    <Compile Include="Controllers\RegisteringController.cs" />
+    <Compile Include="Controllers\tblFilesController.cs" />
+    <Compile Include="Controllers\tlbAccountsController.cs" />
+    <Compile Include="Controllers\tlbBeneficiariesController.cs" />
+    <Compile Include="Controllers\tlbClaimsController.cs" />
+    <Compile Include="Controllers\tlbClientsController.cs" />
+    <Compile Include="Controllers\tlbMembersController.cs" />
+    <Compile Include="Controllers\tlbMessagesController.cs" />
+    <Compile Include="Controllers\tlbPoliciesController.cs" />
+    <Compile Include="Controllers\tlbSpousesController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Listing.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MFPContext.cs" />
+    <Compile Include="Models\ParentCoverQoutation.cs" />
+    <Compile Include="Models\PolicyNumberModel.cs" />
+    <Compile Include="Models\Qoutation.cs" />
+    <Compile Include="Models\RegstrationModel_Partial.cs" />
+    <Compile Include="Models\Sent_mail.cs" />
+    <Compile Include="Models\tblFile.cs" />
+    <Compile Include="Models\tlbAccount.cs" />
+    <Compile Include="Models\tlbBeneficiary.cs" />
+    <Compile Include="Models\tlbClaim.cs" />
+    <Compile Include="Models\tlbClient.cs" />
+    <Compile Include="Models\tlbMember.cs" />
+    <Compile Include="Models\tlbMessage.cs" />
+    <Compile Include="Models\tlbPayment.cs" />
+    <Compile Include="Models\tlbPolicy.cs" />
+    <Compile Include="Models\tlbSpouse.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IPayment.cs" />
+    <Compile Include="Services\Payment.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Mthembu_Funeral_Policy_DB.mdf" />
+    <Content Include="App_Data\Mthembu_Funeral_Policy_DB_log.ldf">
+      <DependentUpon>Mthembu_Funeral_Policy_DB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Gallery.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Icons\Background.png" />
+    <Content Include="Icons\CALENDAR.gif" />
+    <Content Include="Icons\Claim.png" />
+    <Content Include="Icons\CoverParents.gif" />
+    <Content Include="Icons\email.gif" />
+    <Content Include="Icons\extended.gif" />
+    <Content Include="Icons\familyCover.gif" />
+    <Content Include="Icons\HOME.gif" />
+    <Content Include="Icons\info.png" />
+    <Content Include="Icons\location..gif" />
+    <Content Include="Icons\logo.png" />
+    <Content Include="Icons\message.gif" />
+    <Content Include="Icons\MyPro.png" />
+    <Content Include="Icons\MyProfile.png" />
+    <Content Include="Icons\noperiod.gif" />
+    <Content Include="Icons\open.gif" />
+    <Content Include="Icons\over80.gif" />
+    <Content Include="Icons\pay.gif" />
+    <Content Include="Icons\payment.gif" />
+    <Content Include="Icons\phone.png" />
+    <Content Include="Icons\phonemain.png" />
+    <Content Include="Icons\RECORDS.gif" />
+    <Content Include="Icons\SIGNOUT.gif" />
+    <Content Include="Icons\time.gif" />
+    <Content Include="Icons\timeCo.gif" />
+    <Content Include="Icons\ViewCl.png" />
+    <Content Include="Images\babycoffin.jpeg" />
+    <Content Include="Images\blueCoffin.jpg" />
+    <Content Include="Images\ca1.jpg" />
+    <Content Include="Images\ca2.jpeg" />
+    <Content Include="Images\car1.jpg" />
+    <Content Include="Images\car3.JPG" />
+    <Content Include="Images\car4.jpg" />
+    <Content Include="Images\car5.jpg" />
+    <Content Include="Images\CEO.jpg" />
+    <Content Include="Images\coffinppl2.png" />
+    <Content Include="Images\coffiwithppl.png" />
+    <Content Include="Images\flower1.jpeg" />
+    <Content Include="Images\flower2.jpg" />
+    <Content Include="Images\flower3.jpg" />
+    <Content Include="Images\flower4.jpg" />
+    <Content Include="Images\flower5.jpg" />
+    <Content Include="Images\funeral-memorial-service-feature.jpg" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <None Include="Properties\PublishProfiles\mthembufunapp - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mthembufunappservice - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mthembufunappservice - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mthembufuneralappserviservice - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mthembufuneralappserviservice - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mthembufuneralappserviservice - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\MthembuFuneralPolicyApp20201108014546 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SamkeloZakwedb01 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\SamkeloZakwedb01 - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Images\lowcoffin.jpg" />
+    <Content Include="Images\tent1.jpg" />
+    <Content Include="Images\tent2.jpg" />
+    <Content Include="Images\tent3.jpg" />
+    <Content Include="Images\tent4.jpg" />
+    <Content Include="Images\tom3.jpg" />
+    <Content Include="Images\tomb1.jpg" />
+    <Content Include="Images\tombs6.jpg" />
+    <Content Include="Images\tombs8.jpg" />
+    <Content Include="Images\whiteCoffin.jpg" />
+    <Content Include="Images\woodenCoffin.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\layoutand.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Pay\Index.cshtml" />
+    <Content Include="Views\Pay\Complete.cshtml" />
+    <Content Include="Views\Policy\Aboutus_Page.cshtml" />
+    <Content Include="Views\Policy\AddMembers.cshtml" />
+    <Content Include="Views\Policy\AdminCalender.cshtml" />
+    <Content Include="Views\Policy\AdminMessageView.cshtml" />
+    <Content Include="Views\Policy\Admin_Dashboard_Page.cshtml" />
+    <Content Include="Views\Policy\AllClients.cshtml" />
+    <Content Include="Views\Policy\Benef_Details.cshtml" />
+    <Content Include="Views\Policy\Calender.cshtml" />
+    <Content Include="Views\Policy\ChangePassword_Page.cshtml" />
+    <Content Include="Views\Policy\ClaimsHome.cshtml" />
+    <Content Include="Views\Policy\Delete_Client_Info.cshtml" />
+    <Content Include="Views\Policy\ClientProfile.cshtml" />
+    <Content Include="Views\Policy\Client_Profile_Edit.cshtml" />
+    <Content Include="Views\Policy\Contact_us_page.cshtml" />
+    <Content Include="Views\Policy\DeleteMessage.cshtml" />
+    <Content Include="Views\Policy\Edit_Client_Info.cshtml" />
+    <Content Include="Views\Policy\extendedFamilyCover_C.cshtml" />
+    <Content Include="Views\Policy\extendedFamilyCover_CR.cshtml" />
+    <Content Include="Views\Policy\FamilyCover_C.cshtml" />
+    <Content Include="Views\Policy\FamilyCover_CR.cshtml" />
+    <Content Include="Views\Policy\ForgotPassword_Page.cshtml" />
+    <Content Include="Views\Policy\Letter.cshtml" />
+    <Content Include="Views\Policy\Mactch.cshtml" />
+    <Content Include="Views\Policy\MemberDetails.cshtml" />
+    <Content Include="Views\Policy\More_Client_Info.cshtml" />
+    <Content Include="Views\Policy\NoPeriodCover_C.cshtml" />
+    <Content Include="Views\Policy\NoPeriodCover_CR.cshtml" />
+    <Content Include="Views\Policy\Over80Cover_C.cshtml" />
+    <Content Include="Views\Policy\Over80Cover_CR.cshtml" />
+    <Content Include="Views\Policy\ParentCover_C.cshtml" />
+    <Content Include="Views\Policy\ParentCover_CR.cshtml" />
+    <Content Include="Views\Policy\PolicyInfo.cshtml" />
+    <Content Include="Views\Policy\Registration_Successful_Page.cshtml" />
+    <Content Include="Views\Policy\ResetPassword.cshtml" />
+    <Content Include="Views\Policy\ServiceToRegister.cshtml" />
+    <Content Include="Views\Policy\Service_page.cshtml" />
+    <Content Include="Views\Policy\Signin_Page.cshtml" />
+    <Content Include="Views\Policy\Signup_Page.cshtml" />
+    <Content Include="Views\Policy\SpouseDetails.cshtml" />
+    <Content Include="Views\Registering\Delete.cshtml" />
+    <Content Include="Views\Registering\Details.cshtml" />
+    <Content Include="Views\Registering\Edit.cshtml" />
+    <Content Include="Views\Registering\Index.cshtml" />
+    <Content Include="Views\Pay\_Layout.cshtml" />
+    <Content Include="Views\Pay\_LoginPartial.cshtml" />
+    <Content Include="Views\Pay\Error.cshtml" />
+    <Content Include="Views\Pay\Lockout.cshtml" />
+    <Content Include="Views\Home\_Layout.cshtml" />
+    <Content Include="Views\Home\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Home\Lockout.cshtml" />
+    <Content Include="Views\Policy\Home_Page.cshtml" />
+    <Content Include="Views\Transactions\Create.cshtml" />
+    <Content Include="Views\Transactions\Delete.cshtml" />
+    <Content Include="Views\Transactions\Details.cshtml" />
+    <Content Include="Views\Transactions\Edit.cshtml" />
+    <Content Include="Views\Transactions\Index.cshtml" />
+    <Content Include="Views\Policy\FileUploads.cshtml" />
+    <Content Include="Views\tlbAccounts\ViewFiles.cshtml" />
+    <Content Include="Views\Policy\Client_Msg_Send.cshtml" />
+    <Content Include="Views\Policy\MakeClaim.cshtml" />
+    <Content Include="Views\Policy\Userprofile_page.cshtml" />
+    <Content Include="Views\Policy\ClaimsList.cshtml" />
+    <Content Include="Views\Policy\ClaimDetails.cshtml" />
+    <Content Include="Views\Policy\DeleteClaim.cshtml" />
+    <Content Include="Views\tlbAccounts\Create.cshtml" />
+    <Content Include="Views\tlbAccounts\Delete.cshtml" />
+    <Content Include="Views\tlbAccounts\Details.cshtml" />
+    <Content Include="Views\tlbAccounts\Edit.cshtml" />
+    <Content Include="Views\tlbAccounts\Index.cshtml" />
+    <Content Include="Views\Policy\ViewClients.cshtml" />
+    <Content Include="Views\tlbClients\Create.cshtml" />
+    <Content Include="Views\tlbClients\Delete.cshtml" />
+    <Content Include="Views\tlbClients\Details.cshtml" />
+    <Content Include="Views\tlbClients\Edit.cshtml" />
+    <Content Include="Views\tlbClients\Index.cshtml" />
+    <Content Include="Views\Policy\AddBeneficiarie.cshtml" />
+    <Content Include="Views\Policy\AddSpouse.cshtml" />
+    <Content Include="Views\Policy\ClaimApproval.cshtml" />
+    <Content Include="Views\Registering\Client_Registration_Page.cshtml" />
+    <Content Include="Views\tlbPolicies\Create.cshtml" />
+    <Content Include="Views\tlbPolicies\Delete.cshtml" />
+    <Content Include="Views\tlbPolicies\Details.cshtml" />
+    <Content Include="Views\tlbPolicies\Edit.cshtml" />
+    <Content Include="Views\tlbPolicies\Index.cshtml" />
+    <Content Include="Views\Policy\GalleryPage.cshtml" />
+    <Content Include="Views\Policy\Enter.cshtml" />
+    <Content Include="Views\tlbClaims\Create.cshtml" />
+    <Content Include="Views\tlbClaims\Delete.cshtml" />
+    <Content Include="Views\tlbClaims\Details.cshtml" />
+    <Content Include="Views\tlbClaims\Edit.cshtml" />
+    <Content Include="Views\tlbClaims\Index.cshtml" />
+    <Content Include="Views\Policy\CheckStatus.cshtml" />
+    <Content Include="Views\Policy\View.cshtml" />
+    <Content Include="Views\tlbBeneficiaries\Create.cshtml" />
+    <Content Include="Views\tlbBeneficiaries\Delete.cshtml" />
+    <Content Include="Views\tlbBeneficiaries\Details.cshtml" />
+    <Content Include="Views\tlbBeneficiaries\Edit.cshtml" />
+    <Content Include="Views\tlbBeneficiaries\Index.cshtml" />
+    <Content Include="Views\tlbMembers\Create.cshtml" />
+    <Content Include="Views\tlbMembers\Delete.cshtml" />
+    <Content Include="Views\tlbMembers\Details.cshtml" />
+    <Content Include="Views\tlbMembers\Edit.cshtml" />
+    <Content Include="Views\tlbMembers\Index.cshtml" />
+    <Content Include="Views\tlbSpouses\Create.cshtml" />
+    <Content Include="Views\tlbSpouses\Delete.cshtml" />
+    <Content Include="Views\tlbSpouses\Details.cshtml" />
+    <Content Include="Views\tlbSpouses\Edit.cshtml" />
+    <Content Include="Views\tlbSpouses\Index.cshtml" />
+    <Content Include="Views\Policy\ViewFiles.cshtml" />
+    <Content Include="Views\tblFiles\Create.cshtml" />
+    <Content Include="Views\tblFiles\Delete.cshtml" />
+    <Content Include="Views\tblFiles\Details.cshtml" />
+    <Content Include="Views\tblFiles\Edit.cshtml" />
+    <Content Include="Views\tblFiles\Index.cshtml" />
+    <Content Include="Views\tlbMessages\Create.cshtml" />
+    <Content Include="Views\tlbMessages\Delete.cshtml" />
+    <Content Include="Views\tlbMessages\Details.cshtml" />
+    <Content Include="Views\tlbMessages\Edit.cshtml" />
+    <Content Include="Views\tlbMessages\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62919</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62919/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

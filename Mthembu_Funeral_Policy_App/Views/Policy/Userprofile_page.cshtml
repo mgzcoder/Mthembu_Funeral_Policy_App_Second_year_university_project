@@ -1,0 +1,301 @@
+﻿
+<!DOCTYPE html>
+
+
+<html>
+<head>
+
+
+    <script>
+                $(document).ready(function () {
+
+
+                    var readURL = function (input) {
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+
+                            reader.onload = function (e) {
+                                $('.avatar').attr('src', e.target.result);
+                            }
+
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+
+
+                    $(".file-upload").on('change', function () {
+                        readURL(this);
+                    });
+
+
+                });
+
+                 function Response() {
+                     var x = document.getElementById("myTopnav");
+                     if (x.className === "topnav") {
+                         x.className += " responsive";
+                     } else {
+                         x.className = "topnav";
+                     }
+                 }
+
+                 function openFormSignup() {
+                     document.getElementById("sign-up_form").style.display = "block";
+                 }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="body" style="font-family: Calibri Light">
+    <div class="panel" style="background-color: #1D1D2C">
+
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+
+    </div>
+    <div align="left" style="margin-left:5%">
+
+        <p style="  font-size: 14px;margin-left:70px">
+            <img src="~/Icons/logo.png" width="180" height="135" />
+            <span style="margin-left:35%;font-size:18px"><img src="~/Icons/phonemain.png" height="25" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="23" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+
+    <div class="topnav" id="myTopnav">
+
+        <ul style="color: #1D1D2C">
+            <b></b>
+
+
+            <li>&#8226 @Html.ActionLink("HOME", "Home_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C" })</li>
+
+            <li>&#8226 @Html.ActionLink("ABOUT US", "Aboutus_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("CONTACT", "", "", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>
+                <div class="dropdown">
+                    <span><a href="#" style="color:#1D1D2C">&#8226 SERVICE</a></span>
+
+                    <div class="dropdown-content">
+                        <p style="color: #cca63f">Golden service</p>
+                    </div>
+                </div>
+            </li>
+
+            <li>&#8226 @Html.ActionLink("GALLERY", "", "", null, new { id = "Gallery", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-IN", "Signin_Page", "Policy", null, new { id = "Signin", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-UP", "Signup_Page", "Policy", null, new { id = "Signup", style = "color: #1D1D2C " })</li>
+
+
+        </ul>
+        <li href="javascript:void(0);" class="icon" onclick="Response()">
+            <i class="fa fa-bars"></i>
+        </li>
+
+    </div>
+
+
+
+    <hr>
+    <div class="container bootstrap snippet">
+        <div class="row">
+            <div class="col-sm-10"><h1>User Profile</h1></div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <!--left col-->
+
+
+                <div class="text-center">
+                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                    <h6>Upload a different photo...</h6>
+                    <input type="file" class="text-center center-block file-upload">
+                </div></hr><br>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+                    <div class="panel-body"><a href="http://MthembuFuneral.co.za"</a></div>
+                </div>
+
+
+
+                </ul>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Social Media</div>
+                    <div class="panel-body">
+                        
+                </div>
+
+            </div><!--/col-3-->
+            <div class="col-sm-9">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Profile</a></li>
+                    <li> @Html.ActionLink("Register", "Registration_Page", "Policy", null, new { id = "Registration_Page", style = "color: #1D1D2C" })</li>
+
+                    <li> @Html.ActionLink("Update Information", "Home_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C" })</li>
+
+                    <li> @Html.ActionLink("Check payment history", "Aboutus_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+                    <li> @Html.ActionLink("View choosen Policy", "", "", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+                    <li> @Html.ActionLink("Log-out", "", "", null, new { id = "Home_Page", style = "color: #1D1D2C " })</li>
+                </ul>
+
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <div class="tab-pane Active">
+                            <form class="form" action="##" method="post" id="registrationForm">
+                                <div class="form-group">
+
+                                    <iv class="col-xs-6">
+                                        <label for="first_name"><h4>First name</h4></label>
+                                     <!---DisplayFor--->  <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                    </iv>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-xs-6">
+                                        <label for="last_name"><h4>Last name</h4></label>
+                                        <!---DisplayFor---> <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-xs-6">
+                                        <label for="phone"><h4>Phone</h4></label>
+                                        <!---DisplayFor---> <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label for="mobile"><h4>Mobile</h4></label>
+                                        <!---DisplayFor---> <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter Telephone number" title="enter your mobile number if any.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-xs-6">
+                                        <label for="email"><h4>Email</h4></label>
+                                        <!---DisplayFor--->  <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-xs-6">
+                                        <label for="password"><h4>Password</h4></label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-xs-6">
+                                        <label for="password2"><h4>Verify</h4></label>
+                                        <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <br>
+                                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                        <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer align="center" style="background-color:#1D1D2C ;bottom:0px;width:100%;position:relative;color:#F9F9F9;">
+        <br /><br /><br /><br />
+
+
+        <div class="row" align="left" style="margin-left:5%;width:90%">
+
+
+
+            <div class="column">
+                <p align="center" style="background-color:#F9F9F9;width:50%;border-radius:30px">
+
+                    <img src="~/Icons/logo.png" alt="logo " width="100px" height="90px">
+                </p>
+
+                <br />
+                <p align="left" style="color:#C9C6D8"><b>Best we can do, love, care, and comfort,<br /> be with us the family of love.</b></p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>QUICK LINKS</b></p>
+                <br />
+                <p align="left">
+                    <ul style=" font-size: 16px;color:#cca63f">
+                        <b>
+
+                            <li align="left">@Html.ActionLink("Hear more about us.", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be in touch with us", "", "", null, new { id = "contact_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View best we can provide", "", "", null, new { id = "about_us", style = "color:#F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View our gallery", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be with us as family", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+                        </b>
+
+                    </ul>
+                </p><br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style="font-size: 20px;font-family: 'Times New Roman';"><b>OUR CONTACTS</b></p>
+                <br />
+                <p align="left" style="color:#F6F4D5"><b> <img src="~/Icons/email.gif" alt="freshFood " height="18px"> &nbsp; info@umthembu.com <br /><br /><img src="~/Icons/phone.png" alt="freshFood " height="18px" /> &nbsp; (031) 555-9541</p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>SUBSCRIBE</b></p>
+                <br />
+                <p align="left" style="color:#C9C6D8">Subscribe to our email list and<br /> stay up-to-date with all our <br />news.</p>
+            </div>
+
+
+        </div>
+
+
+        <p> <span style="color:#cca63f"> Rise and Shine Developers</span> &copy; 2020. All rights reserved</p>
+        <br />
+    </footer>
+</body>
+</html>

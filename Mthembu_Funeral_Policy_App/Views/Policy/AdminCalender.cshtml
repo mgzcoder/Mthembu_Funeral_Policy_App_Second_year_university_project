@@ -1,0 +1,241 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.tlbMessage
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function Response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+
+        function openForm() {
+            document.getElementById("Confirmation_Form").style.display = "block";
+        }
+
+
+    </script>
+    <title>Calender</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="body" style="font-family: Calibri Light;margin-top:0;">
+    <div class="panel" style="background-color: #1D1D2C;margin-top:-40px">
+        <br />
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+        <br />
+    </div>
+    <div align="left" style="margin-left:5%">
+
+        <p style="  font-size: 14px;margin-left:70px">
+            <img src="~/Icons/logo.png" width="180" height="135" />
+            <span style="margin-left:35%;font-size:18px"><img src="~/Icons/phonemain.png" height="20" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="23" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+
+
+    <span> @ViewBag.Username </span>
+    <hr />
+
+    <div class="row" style="margin-left:1%;width:98%">
+
+        <div class="column1" align="left" style="background-color: #1D1D2C;width:20%;font-size:18px">
+            <h2 align="center" style="color:#F9F9F9"><b>Dashboard</b></h2>
+            <hr />
+            <div style="margin-left:5%">
+
+                <button onclick="location.href='@Url.Action("Admin_Dashboard_Page", "Policy")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/HOME.gif" height="40"> &nbsp; <b>Home </b> </span></button>
+                <br />
+                <br />  <br />
+                <button onclick="location.href='@Url.Action("AllClients", "Policy")'" style="background-color:Transparent;border-color:Transparent;"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/ViewCl.png" height="30">&nbsp; &nbsp;<b>View All clients</b>  </span></button>
+                <br /><br /><br />
+                <button onclick="location.href='@Url.Action("AdminCalender", "Policy")'" style="background-color:Transparent;border-color:Transparent;  width:100%" align=" left" class="active"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/CALENDAR.gif" height="40"> &nbsp; &nbsp;<b>Calender </b>  </span></button><br /><br />  <br />
+                <button onclick="location.href='@Url.Action("AdminMessageView", "Policy")'" style="background-color:Transparent;border-color:Transparent;" align="left" class="active"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/message.gif" height="30">&nbsp; &nbsp;<b>View Messages</b>  </span></button>
+                <br />
+                <br />  <br />
+                <button onclick="location.href='@Url.Action("ClaimsList", "Policy")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/Claim.png" height="40">&nbsp; &nbsp; <b>View Claims </b> </span></button>
+                <br /><br />  <br />
+                <button onclick="location.href='@Url.Action("Index", "Transactions")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/payment.gif" height="40">&nbsp; &nbsp; <b> View Payments </b> </span></button>
+                <br /><br />  <br />  <br />
+                <button onclick="location.href='@Url.Action("Home_Page", "Policy")'" style="background-color:Transparent;border-color:Transparent"><span style="color:#F9F9F9; font-size:25px"><img src="~/Icons/SIGNOUT.gif" height="40">&nbsp; &nbsp; <b> Sign Out </span></button>
+                <br /><br />  <br />
+
+
+
+            </div>
+
+
+        </div>
+        <div class="column1" align="center" style="width:80%">
+            <div id="calendar-month-year" style="width:100%;font-size:50px"></div>
+            <div id="calendar-dates" style="width:100%;font-size:50px"></div>
+
+            <script type="text/javascript">
+                window.onload = function () {
+                    var d = new Date();
+                    var month_name = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                    var month = d.getMonth();   //0-11
+                    var year = d.getFullYear(); //2014
+                    var first_date = month_name[month] + " " + 1 + " " + year;
+                    //September 1 2014
+                    var tmp = new Date(first_date).toDateString();
+                    //Mon Sep 01 2014 ...
+                    var first_day = tmp.substring(0, 3);    //Mon
+                    var day_name = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                    var day_no = day_name.indexOf(first_day);   //1
+                    var days = new Date(year, month + 1, 0).getDate();    //30
+                    //Tue Sep 30 2014 ...
+                    var calendar = get_calendar(day_no, days);
+                    document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
+                    document.getElementById("calendar-dates").appendChild(calendar);
+                }
+                function get_calendar(day_no, days) {
+                    var todaysDate = new Date().getDate();
+                    var table = document.createElement('table');
+                    var tr = document.createElement('tr');
+
+                    //row for the day letters
+                    for (var c = 0; c <= 6; c++) {
+                        var th = document.createElement('th');
+                        th.innerHTML = "MTWTFSS"[c];
+                        tr.appendChild(th);
+                    }
+                    table.appendChild(tr);
+                    //create 2nd row
+                    tr = document.createElement('tr');
+                    var c;
+                    for (c = 0; c <= 6; c++) {
+                        if (c == day_no) {
+                            break;
+                        }
+                        var td = document.createElement('td');
+                        td.innerHTML = "";
+                        tr.appendChild(td);
+                    }
+                    var count = 1;
+                    for (; c <= 6; c++) {
+                        var td = document.createElement('td');
+                        if (count == todaysDate) {
+                            td.className = 'today';
+                        }
+                        td.innerHTML = count;
+                        count++;
+                        tr.appendChild(td);
+                    }
+                    table.appendChild(tr);
+                    //rest of the date rows
+                    for (var r = 3; r <= 7; r++) {
+                        tr = document.createElement('tr');
+                        for (var c = 0; c <= 6; c++) {
+                            if (count > days) {
+                                table.appendChild(tr);
+                                return table;
+                            }
+                            var td = document.createElement('td');
+                            if (count == todaysDate) {
+                                td.className = 'today';
+                            }
+                            td.innerHTML = count;
+                            count++;
+                            tr.appendChild(td);
+                        }
+                        table.appendChild(tr);
+                    }
+                    return table;
+                }
+            </script>
+
+        </div>
+
+    </div>
+    <br />
+
+
+
+
+    <footer align="center" style="background-color:#1D1D2C ;bottom:0px;width:100%;position:relative;color:#F9F9F9;">
+        <br /><br /><br /><br />
+
+
+        <div class="row" align="left" style="margin-left:8%;width:90%">
+
+
+
+            <div class="column">
+                <p align="center" style="background-color:#F9F9F9;width:50%;border-radius:30px">
+
+                    <img src="~/Icons/logo.png" alt="logo " width="100px" height="90px">
+                </p>
+
+                <br />
+                <p align="left" style="color: #C9C6D8;font-size: 16px"><b>Best we can do, love, care, and comfort,<br /> be with us the family of love.</b></p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>QUICK LINKS</b></p>
+                <br />
+                <p align="left">
+                    <ul style=" font-size: 16px;color:#cca63f">
+                        <b>
+
+                            <li align="left">@Html.ActionLink("Hear more about us.", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be in touch with us", "", "", null, new { id = "contact_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View best we can provide", "", "", null, new { id = "about_us", style = "color:#F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View our gallery", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be with us as family", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+                        </b>
+
+                    </ul>
+                </p><br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style="font-size: 20px;font-family: 'Times New Roman';"><b>OUR CONTACTS</b></p>
+                <br />
+                <p align="left" style="color:#F6F4D5;font-size: 16px"><b> <img src="~/Icons/email.gif" alt="freshFood " height="18px"> &nbsp; info@umthembu.com <br /><br /><img src="~/Icons/phone.png" alt="" height="20px" /> &nbsp; (031) 555-9541</p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>SUBSCRIBE</b></p>
+                <br />
+                <p align="left" style="color:#C9C6D8;font-size: 16px">Subscribe to our email list and<br /> stay up-to-date with all our <br />news.</p>
+            </div>
+
+
+
+
+        </div>
+        <p> <span style="color:#cca63f;font-size: 16px"> Rise and Shine Developers</span> &copy; 2020. All rights reserved</p>
+        <br />
+    </footer>
+</body>
+</html>
+
+
+

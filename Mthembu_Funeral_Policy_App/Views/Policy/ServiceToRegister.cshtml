@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function Response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function openFormSignup() {
+            document.getElementById("sign-up_form").style.display = "block";
+        }
+
+
+    </script>
+   <title>Service To Register</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="body" style="font-family: Calibri Light;margin-top:0;">
+    <div class="panel" style="background-color: #1D1D2C;margin-top:-40px">
+        <br />
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+        <br />
+    </div>
+    <div align="left" style="margin-left:5%">
+
+        <p style="  font-size: 14px;margin-left:70px">
+            <img src="~/Icons/logo.png" width="180" height="135" />
+            <span style="margin-left:35%;font-size:18px"><img src="~/Icons/phonemain.png" height="25" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="23" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+
+
+    <div class="topnav" id="myTopnav">
+
+        <ul style="color: #1D1D2C">
+            <b></b>
+
+
+            <li> &#8226 @Html.ActionLink("HOME", "Home_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("ABOUT US", "Aboutus_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("CONTACT US", "Contact_us_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SERVICE", "Service_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("GALLERY", "GalleryPage", "Policy", null, new { id = "Gallery", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-IN", "Signin_Page", "Policy", null, new { id = "Signin", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-UP", "Signup_Page", "Policy", null, new { id = "Signup", style = "color: #1D1D2C " })</li>
+
+
+        </ul>
+        <li href="javascript:void(0);" class="icon" onclick="Response()">
+            <i class="fa fa-bars"></i>
+        </li>
+
+    </div>
+
+    <div style=" font-family: 'Times New Roman';">
+        <br />
+        <br />
+        <h1 class="h1"> Services we can offer</h1>
+        <br />
+    </div>
+    <div class="row" style="margin-left:10%; width:80%; font-size: 16px;font-family: 'Times New Roman' ;" align="center">
+
+        <div class="column2">
+            <img src="~/Icons/CoverParents.gif" />
+            <br />
+            <h3> Parents Cover</h3>
+            <p>
+                Funeral Cover for parents allows those taking care of their parents financially to add them to their existing or new Funeral Cover policy. When one or both of your parents pass away, a lump sum will be paid out.
+                <br /><br />@Html.ActionLink("View More, Get Quotation, Register", "ParentCover_CR", "policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })
+
+
+
+
+            </p>
+
+        </div>
+
+        <div class="column2">
+            <img src="~/Icons/over80.gif" />
+            <br />
+            <h3>Over age of 80 Cover</h3>
+            <p>
+                Funeral Cover for over the age of 80 allows you to prepare financially for the costs involved in arranging a funeral if you have not done so yet, without a medical test.
+                <br /><br /><br />@Html.ActionLink("View More, Get Quotation, Register", "Over80Cover_CR", "policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })
+
+            </p>
+        </div>
+
+        <div class="column2">
+            <img src="~/Icons/extended.gif" />
+            <br />
+            <h3> Extended family Cover</h3>
+            <p>
+                This type of Funeral Cover plan covers the funeral costs of an extended family member to relieve the financial burden from your family. A lump sum will be paid out upon official proof of death.
+                <br />  <br /> @Html.ActionLink("View More, Get Quotation, Register", "extendedFamilyCover_CR", "policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })
+            </p>
+        </div>
+    </div>
+    <br /><br /><br /><br />
+    <div class="row" style="margin-left:20%; width:60%; font-size: 16px;font-family: 'Times New Roman' ;" align="center">
+        <div class="column1">
+            <img src="~/Icons/familyCover.gif" />
+            <br />
+            <h3> Family Cover</h3>
+            <p>
+                Family Funeral Cover takes care of the burial expenses in the event that you, your spouse, children or parents pass away.
+                <br /><br /><br /> @Html.ActionLink("View More, Get Quotation, Register", "FamilyCover_CR", "policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })
+            </p>
+        </div>
+
+        <div class="column1">
+            <img src="~/Icons/noperiod.gif" />
+            <br />
+            <h3>No period Cover</h3>
+            <p>
+                This type of Funeral Cover offers an option where there is no period in which your beneficiaries have to wait for a policy to be paid out in the event of accidental death.
+                <br /> <br /> @Html.ActionLink("View More, Get Quotation, Register", "NoPeriodCover_CR", "policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })
+            </p>
+        </div>
+
+
+    </div>
+
+    <br /><br />
+    <br>
+    <footer align="center" style="background-color:#1D1D2C ;bottom:0px;width:100%;position:relative;color:#F9F9F9;">
+        <br /><br /><br /><br />
+
+
+        <div class="row" align="left" style="margin-left:5%;width:90%">
+
+
+
+            <div class="column">
+                <p align="center" style="background-color:#F9F9F9;width:50%;border-radius:30px">
+
+                    <img src="~/Icons/logo.png" alt="logo " width="100px" height="90px">
+                </p>
+
+                <br />
+                <p align="left" style="color: #C9C6D8;font-size: 16px"><b>Best we can do, love, care, and comfort,<br /> be with us the family of love.</b></p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>QUICK LINKS</b></p>
+                <br />
+                <p align="left">
+                    <ul style=" font-size: 16px;color:#cca63f">
+                        <b>
+
+                            <li align="left">@Html.ActionLink("Hear more about us.", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be in touch with us", "", "", null, new { id = "contact_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View best we can provide", "", "", null, new { id = "about_us", style = "color:#F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View our gallery", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be with us as family", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+                        </b>
+
+                    </ul>
+                </p><br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style="font-size: 20px;font-family: 'Times New Roman';"><b>OUR CONTACTS</b></p>
+                <br />
+                <p align="left" style="color:#F6F4D5;font-size: 16px"><b> <img src="~/Icons/email.gif" alt="freshFood " height="18px"> &nbsp; info@umthembu.com <br /><br /><img src="~/Icons/phone.png" alt="" height="20px" /> &nbsp; (031) 555-9541</p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>SUBSCRIBE</b></p>
+                <br />
+                <p align="left" style="color:#C9C6D8;font-size: 16px">Subscribe to our email list and<br /> stay up-to-date with all our <br />news.</p>
+            </div>
+
+
+
+
+        </div>
+        <p> <span style="color:#cca63f;font-size: 16px"> Rise and Shine Developers</span> &copy; 2020. All rights reserved</p>
+        <br />
+    </footer>
+</body>
+</html>

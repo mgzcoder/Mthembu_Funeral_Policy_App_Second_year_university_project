@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Mthembu_Funeral_Policy_App.Models.Transaction>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<h2>All Payments of Clients</h2>
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+<style>
+    #table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #table td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #table tr:nth-child(even) {
+            background-color: #ddd;
+        }
+
+        #table tr:hover {
+            background-color: #f6e378;
+        }
+
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #1D1D2C;
+            color: white;
+        }
+</style>
+
+<table id="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAY_REQUEST_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AMOUNT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REFERENCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANSACTION_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RESULT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RESULT_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTOMER_EMAIL_ADDRESS)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAY_REQUEST_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AMOUNT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REFERENCE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TRANSACTION_STATUS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RESULT_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RESULT_DESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTOMER_EMAIL_ADDRESS)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.TRANSACTION_ID }, new { @class = "btn btn-default", style = "font-size:18px;background-color:#1D1D2C;color:#F9F9F9;" }) <br />
+                @Html.ActionLink("Delete", "Delete", new { id = item.TRANSACTION_ID }, new { @class = "btn btn-default", style = "font-size:18px;background-color:#1D1D2C;color:#F9F9F9;" })
+            </td>
+        </tr>
+        
+    }
+
+</table>
+<br />
+<br />
+
+<div class="col-md-offset-2 col-md-10">
+    <b> @Html.ActionLink("Back", "Admin_Dashboard_Page", "Policy", null, new { @class = "btn btn-default", style = "margin-left:-18%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })  &nbsp; </b>
+</div>

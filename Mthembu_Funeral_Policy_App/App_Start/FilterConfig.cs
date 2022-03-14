@@ -1,0 +1,12 @@
+﻿using System.Web;
+using System.Web.Mvc;
+namespace Mthembu_Funeral_Policy_App
+{
+    public class FilterConfig
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            filters.Add(new HandleErrorAttribute());
+        }
+    }
+}

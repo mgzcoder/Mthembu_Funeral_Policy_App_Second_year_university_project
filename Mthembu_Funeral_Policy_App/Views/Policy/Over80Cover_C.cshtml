@@ -1,0 +1,275 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.Qoutation
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function Response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function openFormSignup() {
+            document.getElementById("sign-up_form").style.display = "block";
+        }
+    </script>
+    <title>Over 80 Cover</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="body" style="font-family: Calibri Light;margin-top:0;">
+    <div class="panel" style="background-color: #1D1D2C;margin-top:-40px">
+        <br />
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+        <br />
+    </div>
+    <div align="left" style="margin-left:5%">
+
+        <p style="  font-size: 14px;margin-left:70px">
+            <img src="~/Icons/logo.png" width="180" height="135" />
+            <span style="margin-left:35%;font-size:18px"><img src="~/Icons/phonemain.png" height="25" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="23" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+
+
+    <div class="topnav" id="myTopnav">
+
+        <ul style="color: #1D1D2C">
+            <b></b>
+
+
+            <li> &#8226 @Html.ActionLink("HOME", "Home_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("ABOUT US", "Aboutus_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("CONTACT US", "Contact_us_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SERVICE", "Service_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("GALLERY", "GalleryPage", "Policy", null, new { id = "Gallery", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-IN", "Signin_Page", "Policy", null, new { id = "Signin", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-UP", "Signup_Page", "Policy", null, new { id = "Signup", style = "color: #1D1D2C " })</li>
+
+
+        </ul>
+        <li href="javascript:void(0);" class="icon" onclick="Response()">
+            <i class="fa fa-bars"></i>
+        </li>
+
+    </div>
+    <hr />
+    <h1 style=" font-family: 'Times New Roman';color:#1D1D2C" align="center"><b>Over 80 cover</b> </h1>
+    <div class="row" style="margin-left:8%;background-color: #F3EFEF;width:85%;color:#1D1D2C;">
+
+        <div class="column1" align="right" style="width:35%">
+            <h2 align="center" style="color:#1D1D2C;font-family: 'Times New Roman'"><b>Benefits</b></h2>
+            <br />
+            <span style="color: #1D1D2C;font-size:19px">
+                
+                    <h3 align="left" style="margin-left:9%"><b>Golden, R500 p/m</b></h3>
+                    <ul align="left">
+                        <li>R 200 Airtime and Electricity</li>
+                        <li>Transport of the deceased</li>
+                        <li>Bus and Mini bus</li>
+                        <li>Grocery of R 2 000</li>
+                        <li>Tombstone</li>
+                        <li>Event Tent & Chairs(x 10) with water</li>
+                        <li>Casket Coffin Lowering Device</li>
+                        <li>Coffin of R 30 000 – R 40 000</li>
+                        <li>Cash up front of R 3 000</li>
+
+                    </ul>
+                <br />
+                    <h3 align="left" style="margin-left:9%"><b>Silver, R400 p/m </b></h3>
+                    <ul align="left">
+                        <li>  R 200 Airtime and Electricity</li>
+                        <li> Transport of deceased</li>
+                        <li>  Bus</li>
+                        <li>Grocery of R 1 500</li>
+                        <li>Tombstone</li>
+                        <li>Event Tent & Chair(x 10) with water</li>
+                        <li> Casket Coffin Lowering Device</li>
+                        <li> Coffin of R 20 000 – R 30 000</li>
+                        <li> Cash up front of R 2 000</li>
+
+                    </ul>
+                <br />
+                    <h3 align="left" style="margin-left:9%"><b>  Bronze, R350 p/m</b></h3>
+                    <ul align="left">
+                        <li>R 200 Airtime</li>
+                        <li>Transport of the deceased</li>
+                        <li>Bus</li>
+                        <li>Grocery of R 1 000</li>
+                        <li>Event Tent & Chairs(x 10) with Water</li>
+                        <li>Casket coffin lowering device</li>
+                        <li>Coffin of R 10 000 – R 20 000</li>
+                        <li>Cash up front of R 1000</li>
+                    </ul>
+
+                
+
+            </span>
+        </div>
+        <div class="column1" align="left" style="width:65%">
+            <br /><br /><br />  <br /><br /><br /> <br /><br /><br /> <br /><br /><br /> <br /><br />
+            <h2 align="center" style=" font-family: 'Times New Roman';"><b>Get your cover quotation</b></h2>
+            <br /><br />
+            @using (Html.BeginForm())
+            {<b>
+                    <div class="form-group" style="margin-left:15%">
+                        @Html.LabelFor(model => model.NumMembers, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NumMembers, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NumMembers, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-group" style="margin-left:15%">
+                        @Html.LabelFor(model => model.CoverType, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.CoverType, new List<SelectListItem>
+                                    {
+                                    new SelectListItem { Text = "Gold", Value = "Gold",},
+                                    new SelectListItem { Text = "Silver", Value = "Silver"},
+                                    new SelectListItem { Text = "Bronze", Value = "Bronze"},
+
+                                    }, "Select Race")
+
+
+                            @Html.ValidationMessageFor(model => model.TotalPrice, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+
+                    <br />
+                    <br /><br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Process" class="btn btn-default" style="margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" />
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-group" style="margin-left:15%">
+                        @Html.LabelFor(model => model.TotalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <b> R @Html.DisplayFor(model => model.TotalPrice, new { htmlAttributes = new { @class = "form-control" } })</b>
+
+                        </div>
+                    </div>
+                </b>
+            }
+        </div>
+        <br />
+        <br />
+
+
+
+
+    </div>
+    <div class="form-group;colo">
+        <div class="col-md-offset-2 col-md-10">
+            <br /><br /><b> @Html.ActionLink("Back", "Service_Page", "Policy", new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })   @Html.ActionLink("Register", "Signup_Page", "Policy", new { @class = "btn btn-default", style = "margin-left:50%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" }) <br /><br /><br />
+</div>
+
+    </div>
+    <br />
+
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+
+
+
+
+    <footer align="center" style="background-color:#1D1D2C ;bottom:0px;width:100%;position:relative;color:#F9F9F9;">
+        <br /><br /><br /><br />
+
+
+        <div class="row" align="left" style="margin-left:8%;width:90%">
+
+
+
+            <div class="column">
+                <p align="center" style="background-color:#F9F9F9;width:50%;border-radius:30px">
+
+                    <img src="~/Icons/logo.png" alt="logo " width="100px" height="90px">
+                </p>
+
+                <br />
+                <p align="left" style="color: #C9C6D8;font-size: 16px"><b>Best we can do, love, care, and comfort,<br /> be with us the family of love.</b></p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>QUICK LINKS</b></p>
+                <br />
+                <p align="left">
+                    <ul style=" font-size: 16px;color:#cca63f">
+                        <b>
+
+                            <li align="left">@Html.ActionLink("Hear more about us.", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be in touch with us", "", "", null, new { id = "contact_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View best we can provide", "", "", null, new { id = "about_us", style = "color:#F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View our gallery", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be with us as family", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+                        </b>
+
+                    </ul>
+                </p><br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style="font-size: 20px;font-family: 'Times New Roman';"><b>OUR CONTACTS</b></p>
+                <br />
+                <p align="left" style="color:#F6F4D5;font-size: 16px"><b> <img src="~/Icons/email.gif" alt="freshFood " height="18px"> &nbsp; info@umthembu.com <br /><br /><img src="~/Icons/phone.png" alt="" height="20px" /> &nbsp; (031) 555-9541</p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>SUBSCRIBE</b></p>
+                <br />
+                <p align="left" style="color:#C9C6D8;font-size: 16px">Subscribe to our email list and<br /> stay up-to-date with all our <br />news.</p>
+            </div>
+
+
+
+
+        </div>
+        <p> <span style="color:#cca63f;font-size: 16px"> Rise and Shine Developers</span> &copy; 2020. All rights reserved</p>
+        <br />
+    </footer>
+</body>
+</html>
+

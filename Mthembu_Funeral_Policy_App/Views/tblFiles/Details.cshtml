@@ -1,0 +1,58 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.tblFile
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>tblFile</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ID_Copy)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ID_Copy)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Death_Cert)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Death_Cert)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ContentType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ContentType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Data)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Data)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

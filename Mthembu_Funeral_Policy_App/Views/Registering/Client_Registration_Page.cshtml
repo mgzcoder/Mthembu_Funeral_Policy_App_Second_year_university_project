@@ -1,0 +1,342 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.RegstrationModel_Partial
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function Response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function openFormSignup() {
+            document.getElementById("sign-up_form").style.display = "block";
+        }
+    </script>
+    <title>Registration</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="body" style="font-family: Calibri Light">
+    <div class="panel" style="background-color: #1D1D2C;margin-top:-40px">
+        <br />
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+        <br />
+    </div>
+    <div align="left" style="margin-left:10%">
+
+        <p style="  font-size: 14px;margin-top:10px;margin-top:10px;margin-left:50px">
+            <img src="~/Icons/logo.png" style="" width="180" height="135" />
+            <span style="margin-left:35%"><img src="~/Icons/phonemain.png" height="20" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="20" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+    <br />
+
+    <div class="topnav" id="myTopnav">
+
+        <ul style="color: #1D1D2C">
+            <b></b>
+
+
+            <li> &#8226 @Html.ActionLink("HOME", "Home_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("ABOUT US", "Aboutus_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("CONTACT US", "Contact_us_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SERVICE", "Service_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("GALLERY", "", "", null, new { id = "Gallery", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-IN", "Signin_Page", "Policy", null, new { id = "Signin", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-UP", "Signup_Page", "Policy", null, new { id = "Signup", style = "color: #1D1D2C " })</li>
+
+
+        </ul>
+        <li href="javascript:void(0);" class="icon" onclick="Response()">
+            <i class="fa fa-bars"></i>
+        </li>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-horizontal" style="margin-left:10%;font-size:15px">
+    <h2 style="margin-left:15%">Registration Form</h2>
+    <hr />
+    <div class="panel" style="background-color: #1D1D2C;margin-top:0px;width:90%">
+
+        <p style="color: #cca63f;  font-size: 20px;margin-top:10px;margin-top:10px;margin-left:50px">Step 1: Premium Payer/ Proposer details <span style="margin-left:40%;color: #F6F4D5"></span> </p>
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbPolicy.tlbClient_ID2, "tlbClient_ID2", htmlAttributes: new { @class = "control-label col-md-2" , style = "display:none" })
+        <div class="col-md-10">
+            @Html.DropDownList("tlbClient_ID2", null, htmlAttributes: new { @class = "form-control", style="display:none" })
+            @Html.ValidationMessageFor(model => model.tlbPolicy.tlbClient_ID2, "", new { @class = "text-danger" , style = "display:none" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.HiddenFor(model => model.tlbPolicy.Policy_Cost, htmlAttributes: new { @class = "control-label col-md-2" , style = "display:none" })
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.tlbPolicy.Policy_Cost, new { htmlAttributes = new { @class = "form-control" , style = "display:none" } })
+            @Html.ValidationMessageFor(model => model.tlbPolicy.Policy_Cost, "", new { @class = "text-danger" , style = "display:none" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.HiddenFor(model => model.tlbPolicy.Available_Amount, htmlAttributes: new { @class = "control-label col-md-2" , style = "display:none" })
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.tlbPolicy.Available_Amount, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
+            @Html.ValidationMessageFor(model => model.tlbPolicy.Available_Amount, "", new { @class = "text-danger", style = "display:none" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbPolicy.Policy_Type, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.tlbPolicy.Policy_Type, new List<SelectListItem>
+           {
+               new SelectListItem {Text = "Over 80", Value = "Over 80"},
+               new SelectListItem {Text = "Parent Cover", Value ="Parent Cover" },
+               new SelectListItem {Text = "Family Cover", Value ="Family Cove" },
+               new SelectListItem {Text = "Extended Family", Value = "Extended Family"},
+               new SelectListItem {Text = "No Period", Value = "No Period"},
+            }, "select Type of Policy")
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbPolicy.Cover_Type, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.tlbPolicy.Cover_Type, new List<SelectListItem>
+           {
+               new SelectListItem {Text = "Gold", Value = "Gold"},
+               new SelectListItem {Text = "Silver", Value ="Silver" },
+               new SelectListItem {Text = "Bronze", Value ="Bronze" },
+            }, "select Type of Cover")
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.SA_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.SA_ID, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.SA_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.First_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.First_Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.First_Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Last_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.Last_Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Marital_Status, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.tlbClient.Marital_Status, " Single") @Html.Label("Single") &nbsp;
+            @Html.RadioButtonFor(model => model.tlbClient.Marital_Status, " Maried") @Html.Label("Maried") &nbsp;
+
+            @Html.ValidationMessageFor(model => model.tlbClient.Marital_Status, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.tlbClient.Gender, " Female") @Html.Label("Female") &nbsp;
+            @Html.RadioButtonFor(model => model.tlbClient.Gender, " male") @Html.Label("Male") &nbsp;
+            @Html.RadioButtonFor(model => model.tlbClient.Gender, "Other ") @Html.Label("Other") &nbsp;
+            @Html.ValidationMessageFor(model => model.tlbClient.Gender, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Race, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.tlbClient.Race, new List<SelectListItem>
+                    {
+                    new SelectListItem { Text = "African", Value = "African",},
+                    new SelectListItem { Text = "Coloured", Value = "Coloured"},
+                    new SelectListItem { Text = "Indian", Value = "Indian"},
+                    new SelectListItem { Text = "White", Value = "White"}
+                    }, "Select Race")
+
+
+            @Html.ValidationMessageFor(model => model.tlbClient.Race, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Email_Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.Email_Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.Email_Address, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Cell_Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.Cell_Phone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.Cell_Phone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Tell_Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.Tell_Phone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.Tell_Phone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.City, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.City, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.City, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Home_Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.Home_Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.Home_Address, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tlbClient.Postal_Code, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tlbClient.Postal_Code, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tlbClient.Postal_Code, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <br /><br />
+   
+    <br />
+    <br />
+
+    
+
+    <br />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <b> @Html.ActionLink("Back", "ServiceToRegister", "Policy", null, new { @class = "btn btn-default", style = "margin-left:15%;font-size:20px;background-color:#1D1D2C;color: #F6F4D5" })   <input type="submit" style="margin-left:15%;font-size:18px;background-color:#1D1D2C;color: #F6F4D5" value="Submit" class="btn btn-default" /></b>
+    </div>
+    </div>
+   
+
+    <p style="color:forestgreen">
+        @Html.ViewBag.SuccessMessage;
+    </p>
+</div>
+    }
+
+
+
+    <br>
+    <footer align="center" style="background-color:#1D1D2C ;bottom:0px;width:100%;position:relative;color:#F9F9F9;">
+        <br /><br /><br /><br />
+        <div align="center" style="width:90%;margin-left:5%;">
+
+            <div class="row" align="left" style="margin-left:4%;">
+
+
+
+                <div class="column">
+                    <p align="center" style="background-color:#F9F9F9;width:50%;border-radius:30px;">
+
+                        <img src="~/Icons/logo.png" alt="freshFood " width="100px" height="90px">
+                    </p>
+
+                    <br />
+                    <p align="left" style="color:#C9C6D8"><b>Best we can do, love, care, and comfort,<br /> be with us the family of love.</b></p>
+                    <br>
+                </div>
+
+                <div class="column">
+
+                    <br /><br />
+                    <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>QUICK LINKS</b></p>
+                    <br />
+                    <p align="left">
+                        <ul style=" font-size: 16px;color:#cca63f">
+                            <b>
+
+                                <li align="left">@Html.ActionLink("Hear more about us.", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                                <li align="left">@Html.ActionLink("Be in touch with us", "", "", null, new { id = "contact_us", style = "color: #F6F4D5" })</li>
+
+                                <li align="left">@Html.ActionLink("View best we can provide", "", "", null, new { id = "about_us", style = "color:#F6F4D5" })</li>
+
+                                <li align="left">@Html.ActionLink("View our gallery", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                                <li align="left">@Html.ActionLink("Be with us as family", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+                            </b>
+
+                        </ul>
+                    </p><br>
+                </div>
+
+                <div class="column">
+
+                    <br /><br />
+                    <p align="left" style="font-size: 20px;font-family: 'Times New Roman';"><b>OUR CONTACTS</b></p>
+                    <br />
+                    <p align="left" style="color:#F6F4D5"><b> <img src="~/Icons/email.gif" alt="freshFood " height="18px"> &nbsp; info@umthembu.com <br /><br /><img src="~/Icons/phone.png" alt="freshFood " height="18px" /> &nbsp; (031) 555-9541</p>
+                    <br>
+                </div>
+
+                <div class="column">
+
+                    <br /><br />
+                    <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>SUBSCRIBE</b></p>
+                    <br />
+                    <p align="left" style="color:#C9C6D8">Subscribe to our email list and<br /> stay up-to-date with all our <br />news.</p>
+                </div>
+
+
+            </div>
+
+        </div>
+        <p> <span style="color:#cca63f"> Rise and Shine Developers</span> &copy; 2020. All rights reserved</p>
+        <br />
+    </footer>
+</body>
+</html>
+

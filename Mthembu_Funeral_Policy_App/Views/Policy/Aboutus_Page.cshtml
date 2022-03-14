@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script>
+        function Response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function openFormSignup() {
+            document.getElementById("sign-up_form").style.display = "block";
+        }
+
+        function ReadMore() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("Btnreadmore");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+
+    </script>
+  
+    <title>About Us</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="body" style="font-family: Calibri Light;margin-top:0;">
+    <div class="panel" style="background-color: #1D1D2C;margin-top:-3%">
+        <br />
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+        <br />
+    </div>
+    <div align="left" style="margin-left:5%">
+
+        <p style="  font-size: 14px;margin-left:70px">
+            <img src="~/Icons/logo.png" width="180" height="135" />
+            <span style="margin-left:35%;font-size:18px"><img src="~/Icons/phonemain.png" height="25" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="23" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+
+
+    <div class="topnav" id="myTopnav">
+
+        <ul style="color: #1D1D2C">
+            <b></b>
+
+
+            
+            <li> &#8226 @Html.ActionLink("HOME", "Home_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("ABOUT US", "Aboutus_Page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("CONTACT US", "Contact_us_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SERVICE", "Service_page", "Policy", null, new { id = "about_us", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("GALLERY", "GalleryPage", "Policy", null, new { id = "Gallery", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-IN", "Signin_Page", "Policy", null, new { id = "Signin", style = "color: #1D1D2C " })</li>
+
+            <li>&#8226 @Html.ActionLink("SIGN-UP", "Signup_Page", "Policy", null, new { id = "Signup", style = "color: #1D1D2C " })</li>
+
+
+
+        </ul>
+        <li href="javascript:void(0);" class="icon" onclick="Response()">
+            <i class="fa fa-bars"></i>
+        </li>
+
+    </div>
+
+
+    <center style=" font-family: 'Times New Roman';">
+
+        <br />
+        <br />
+        <div style=" font-family: 'Times New Roman';">
+
+            <br />
+            <h1 class="h1"> TELLING YOU MORE ABOUT US</h1>
+            <br />
+        </div>
+        <br /><br /><br /><br /><br />
+
+        <div class="row" style="margin-left:5%;width:80%">
+
+            <div class="column1" align="center">
+
+                <img src="~/Images/CEO.jpg" height="300" />
+            </div>
+            <div class="columm1">
+                <h3 align="left" style="color:#1D1D2C;">The Founder and Also a CEO</h3>
+                <p align="left" style="font-size: 16px">
+                    <b>
+                        Mthokozisi Robert Mthembu is the founder and current CEO of Mthembu Funeral Cover
+                        Policy, an authorized funeral policy provider underwritten by him. The company offers simple and relevant funeral
+                        insurance covers to the market, tailored to meet the specific needs of the communities in which they operate. They
+                        also offer professional and dignified funeral services to their clients.
+                </p></b>
+
+                <p align="left" style="font-size: 16px">
+                    <b>
+                        His decision to start Mthembu Funeral Cover was inspired by a lack of openness, transparency and honesty
+                        which characterized the manner in which the funeral services industry was mainly conducted. He resolved to
+                        establish a company that would disrupt the status quo, the company that would recognize, promote and protect
+                        the rights of its clients whilst at the same time pursuing an objective of profit maximization. The name Mthembu resonates with that spirit.
+                    </b>
+                </p>
+
+            </div>
+        </div>
+        <br /><br /><br /><br />
+        <div class="row" style="margin-left:4%;width:80%;background-color:#1D1D2C">
+            <br /><br />
+            <div class="column2" align="center">
+                <p style="color:#cca63f">
+                    IMMEDIATE HELP <br /><br />
+                    <span style="color:#F9F9F9;font-size:25px"> (031) 555-9541 </span>
+                </p>
+            </div>
+
+            <div class="column2">
+                <p style="color:#cca63f">
+                    WE’RE OPEN <br /><br />
+                    <span style="color:#F9F9F9;font-size:25px"> Mon-Sun: 08:00AM - 17:00PM </span>
+                </p>
+            </div>
+
+            <div class="column2">
+                <p style="color:#cca63f">
+                    NEED MORE INFO <br /><br />
+                    <span style="color:#F9F9F9;font-size:25px"> (031) 555-9999 </span>
+                </p>
+            </div>
+            <br /><br /><br /><br /><br /><br />
+        </div>
+        <br /><br />
+        <h2 class="h2" style=" font-family: 'Times New Roman';">Our Company Values</h2>
+        <div class="row" style="margin-left:4%;width:80%;color:#1D1D2C">
+
+
+
+            <div class="column2" align="center">
+                <h3> Transparency </h3>
+                <p style="font-size: 16px">
+                    Opennes with our team & clients<br />
+                    we raise issues & and provide<br />
+                    solutions promtly.<br />
+
+
+                </p>
+            </div>
+
+            <div class="column2" align="center">
+                <h3>Working Hard</h3>
+                <p style="font-size: 16px">
+                    Our word and hard work over& everything<br />
+                    else. To our clients and vision<br />
+                    are guiding beacons<br />
+
+
+                </p>
+            </div>
+
+            <div class="column2" align="center">
+                <h3> Commitment</h3>
+                <p style="font-size: 16px">
+                    Deliver more value than our team<br />
+                    and clients expects. Every<br />
+                    day of every claim<br />
+
+
+                </p>
+            </div>
+            <br /><br /><br /><br /><br /><br />
+        </div>
+        <br />
+        <br /><br />
+        <div style="background-color:#F3EFEF">
+            <div style=" font-family: 'Times New Roman';">
+
+                <br />
+                <h2 class="h2"> OUR HISTORY</h2>
+                <br />
+            </div>
+            <br />
+            <br />
+            <p align="justify" style="color:#1D1D2C;width:50%; font-family: 'Times New Roman';font-size:20px">
+                Mthembu Funeral Policy began its tradition of serving the families of KZN over 5 years ago. Since that time, the concept of “our family serving your family in your time of need” has been reflected in the multitude of services we offer, in our comfortable surroundings, and in our professional, capable staff.<span id="dots">...</span><span id="more">
+                    Mthembu Funeral Policy is locally owned and operated, and is dedicated to serving the needs of all families, regardless of race, religion or financial status. Today the funeral home is under the direction of Owen J.Mthembu, a licensed funeral director. His wife, Thobeka M.Mthembu, helps with advanced planning and family services.  They have raised and educated their children in the Durban Metropolitan Area, and community involvement has been, and continues to be, a focus of their loyalty and continued service to the community where they live. Their daughters, Thando Mthembu, a licensed funeral director and Snethemba Mthembu run the day to day operations of the funeral home.
+                    To maintain the high standards people have come to expect of them, they are continuously looking for better ways to serve the community. They are committed to caring and helping the families they serve. They offer each family they serve the ability to plan a funeral that will meet their specific needs, while keeping their traditional commitment to funeral service unchanged.
+                </span>
+            </p>
+            <button onclick="ReadMore()" id="Btnreadmore" style="color:#F3EFEF;background-color: #1D1D2C;border-width:0px;font-size:20px;width:150px;height:70px">Read more</button>
+            <br /><br /><br />
+        </div>
+
+    </center>
+
+
+    <footer align="center" style="background-color:#1D1D2C ;margin-bottom:-10%;width:100%;position:relative;color:#F9F9F9;">
+        <br /><br /><br /><br />
+
+
+        <div class="row" align="left" style="margin-left:5%;width:90%">
+
+
+
+            <div class="column">
+                <p align="center" style="background-color:#F9F9F9;width:50%;border-radius:30px">
+
+                    <img src="~/Icons/logo.png" alt="logo " width="100px" height="90px">
+                </p>
+
+                <br />
+                <p align="left" style="color: #C9C6D8;font-size: 16px"><b>Best we can do, love, care, and comfort,<br /> be with us the family of love.</b></p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>QUICK LINKS</b></p>
+                <br />
+                <p align="left">
+                    <ul style=" font-size: 16px;color:#cca63f">
+                        <b>
+
+                            <li align="left">@Html.ActionLink("Hear more about us.", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be in touch with us", "", "", null, new { id = "contact_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View best we can provide", "", "", null, new { id = "about_us", style = "color:#F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("View our gallery", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+
+                            <li align="left">@Html.ActionLink("Be with us as family", "", "", null, new { id = "about_us", style = "color: #F6F4D5" })</li>
+                        </b>
+
+                    </ul>
+                </p><br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style="font-size: 20px;font-family: 'Times New Roman';"><b>OUR CONTACTS</b></p>
+                <br />
+                <p align="left" style="color:#F6F4D5;font-size: 16px"><b> <img src="~/Icons/email.gif" alt="freshFood " height="18px"> &nbsp; info@umthembu.com <br /><br /><img src="~/Icons/phone.png" alt="" height="20px" /> &nbsp; (031) 555-9541</p>
+                <br>
+            </div>
+
+            <div class="column">
+
+                <br /><br />
+                <p align="left" style=" font-size: 20px;font-family: 'Times New Roman';"><b>SUBSCRIBE</b></p>
+                <br />
+                <p align="left" style="color:#C9C6D8;font-size: 16px">Subscribe to our email list and<br /> stay up-to-date with all our <br />news.</p>
+            </div>
+
+
+
+
+        </div>
+        <p> <span style="color:#cca63f;font-size: 16px"> Rise and Shine Developers</span> &copy; 2020. All rights reserved</p>
+        <br />
+    </footer>
+</body>
+</html>

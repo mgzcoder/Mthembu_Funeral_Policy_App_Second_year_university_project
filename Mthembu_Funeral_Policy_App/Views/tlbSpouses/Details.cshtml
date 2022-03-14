@@ -1,0 +1,58 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.tlbSpouse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>tlbSpouse</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Spouse_SA_ID_Number)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Spouse_SA_ID_Number)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tlbClient_ID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tlbClient_ID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Spouse_First_Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Spouse_First_Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Spouse_Last_Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Spouse_Last_Name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.tlbMessage
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function Response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+
+        function openForm() {
+            document.getElementById("Confirmation_Form").style.display = "block";
+        }
+
+
+    </script>
+    <title>Success Message</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="body" style="font-family: Calibri Light;margin-top:0;">
+    <div class="panel" style="background-color: #1D1D2C">
+
+        <p style="color: #cca63f;  font-size: 20px;margin-left:50px">Family Feeling And Professional Approach <span style="margin-left:40%;color: #F6F4D5;font-size:18px"><img src="~/Icons/location..gif" height="20" /> 2 Mona Rd, Durban Central, Durban, 4001</span> </p>
+
+    </div>
+    <div align="left" style="margin-left:5%">
+
+        <p style="  font-size: 14px;margin-left:70px">
+            <img src="~/Icons/logo.png" width="180" height="135" />
+            <span style="margin-left:35%;font-size:18px"><img src="~/Icons/phonemain.png" height="25" /> <b style="color: #cca63f"> &nbsp; (031) 555-9541 </b> &nbsp; &nbsp;<img src="~/Icons/time.gif" height="23" /> &nbsp;<b style="color:#636380"> Mon - Sun: 08:00AM - 17:00PM </b></span>
+        </p>
+
+    </div>
+
+
+    <span> @ViewBag.Username </span>
+    <hr />
+
+
+    <div class="column1" align="left" style="width:85%;font-size:25px;">
+        <p style="margin-left:30%">
+            Dear valued client<br /><br /> We as Mthembu Funeral Policy we are very happy that you have decide to join our team,<br />
+            we hope that we’ll treat each other in a very good manner.
+            This is a message for you <br />which lets you know that you have successfully registered with us.<br /><br />
+            Press the Next button to see more details about your policy.
+            <br /><br />
+            Kind Regards
+            <br /><br /><br />
+            <button onclick="location.href='@Url.Action("Signin_Page", "Policy")'" style="background-color:#1D1D2C;border-color:Transparent;"><span style="color:#F9F9F9; font-size:25px"><b>Next </b> </span></button>
+        </p>
+
+    </div>
+
+    <br />
+</body>
+</html>
+
+

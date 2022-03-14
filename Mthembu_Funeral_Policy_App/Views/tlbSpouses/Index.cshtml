@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Mthembu_Funeral_Policy_App.Models.tlbSpouse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Spouse_SA_ID_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tlbClient_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spouse_First_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spouse_Last_Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spouse_SA_ID_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tlbClient_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spouse_First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spouse_Last_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

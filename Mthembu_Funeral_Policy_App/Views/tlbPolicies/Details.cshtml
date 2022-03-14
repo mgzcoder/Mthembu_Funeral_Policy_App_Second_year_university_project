@@ -1,0 +1,66 @@
+﻿@model Mthembu_Funeral_Policy_App.Models.tlbPolicy
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>tlbPolicy</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.tlbClient_ID2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tlbClient_ID2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Policy_Cost)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Policy_Cost)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Available_Amount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Available_Amount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Policy_Type)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Policy_Type)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Cover_Type)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cover_Type)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Policy_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
